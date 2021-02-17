@@ -58,7 +58,7 @@
 					    setInterval(()=>{
 					        let tokenObj = getRefreshToken()
 					        console.log("定时任务")
-					        if(new Date().getTime() - tokenObj.date >= this.website.tokenTime)
+					        if(new Date().getTime() - tokenObj.date >= this.webconfig.tokenTime)
 					        {
 					            console.log("Token刷新")
 					            refreshToken(tokenObj.token,data.tenant_id).then((res2)=>{

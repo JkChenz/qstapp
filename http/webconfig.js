@@ -32,7 +32,8 @@ export const webconfig = {
         return statusCode >= 200 && statusCode < 500
     },
 	clientId: 'saber', // 客户端id
-	clientSecret: 'saber_secret' // 客户端密钥
+	clientSecret: 'saber_secret' ,// 客户端密钥
+    tokenTime: 60000,
   }
 
 export const statusWhiteList = []

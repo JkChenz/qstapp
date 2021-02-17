@@ -13,6 +13,10 @@ Vue.use(uView);
 import cuCustom from 'uni-colorui/theme/components/cu-custom.vue'
 Vue.component('cu-custom',cuCustom)
 
+import webconfig from '@/http/webconfig';
+// 加载website
+Vue.prototype.webconfig = webconfig;
+
 const app = new Vue({
     ...App
 })

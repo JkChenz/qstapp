@@ -23,7 +23,17 @@
 		        "backgroundColor":"#FFFFFF"
 			},
 		    "disableScroll":true
-		}
+		},
+        {
+        	"path": "pages/qst/taskIndex",
+        	"style": {
+                "navigationStyle" : "default",
+                "navigationBarTitleText": "快检抽样",
+                "navigationBarBackgroundColor": "#FFFFFF"
+                // "backgroundColor":"#FFFFFF"
+        	},
+            "disableScroll":true
+        }
 	],
 	"globalStyle": {
         "navigationStyle" : "custom",
