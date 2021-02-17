@@ -10,7 +10,7 @@ http.setConfig((config) => { /* config 为默认全局配置*/
 })
 
 http.interceptors.request.use((config) => { // 可使用async await 做异步操作
-  config.header['Blade-Auth'] = `Basic ${Base64.encode(`${webconfig.clientId}:${webconfig.clientSecret}`)}`;
+  config.header['Authorization'] = `Basic ${Base64.encode(`${webconfig.clientId}:${webconfig.clientSecret}`)}`;
   // if(getToken().token)
   // {
 	 //  config.headers['Blade-Auth'] = 'bearer ' + getToken().token

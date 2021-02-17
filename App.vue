@@ -35,6 +35,7 @@
 </script>
 
 <style lang="scss">
+	@import "./static/icon/iconfont.css";
     @import "uview-ui/index.scss";
     @import "uni-colorui/theme/main.css";
     @import "uni-colorui/theme/icon.css";

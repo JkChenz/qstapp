@@ -9,6 +9,13 @@
                 "backgroundColor":"#FFFFFF"
 			},
             "disableScroll":true
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+		        "backgroundColor":"#FFFFFF"
+			},
+		    "disableScroll":true
 		}
 	],
 	"globalStyle": {

@@ -1,9 +1,28 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+	<view class="u-m-l-40 u-m-r-40 u-m-t-40">
+		<u-grid :col="2" >
+				<u-grid-item @click="handleQst">
+					<u-icon name="edit-pen-fill" :size="46"></u-icon>
+					<view class="grid-text">快速检测</view>
+				</u-grid-item>
+				<u-grid-item @click="">
+					<u-icon custom-prefix="custom-icon" name="weihu" :size="46"></u-icon>
+					<view class="grid-text">数据维护</view>
+				</u-grid-item>
+				<u-grid-item>
+					<u-icon name="hourglass" :size="46"></u-icon>
+					<view class="grid-text">预留</view>
+				</u-grid-item>
+				<u-grid-item>
+					<u-icon name="hourglass" :size="46"></u-icon>
+					<view class="grid-text">预留</view>
+				</u-grid-item>
+				<u-grid-item>
+					<u-icon name="backspace" :size="46"></u-icon>
+					<view class="grid-text">退出登录</view>
+				</u-grid-item>
+				
+			</u-grid>
 	</view>
 </template>
 
@@ -18,35 +37,14 @@
 
 		},
 		methods: {
-
+			handleQst(){
+				this.$u.toast("handleQst")
+			},
+			
 		}
 	}
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+	
 </style>
