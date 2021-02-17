@@ -1,6 +1,7 @@
-import Request from 'luch-request' // 使用npm
+import Request from 'luch-request' 
 import {webconfig} from './webconfig'
 import {Base64} from 'js-base64';
+import {getToken,setToken} from '@/utils/auth';
 
 const http = new Request();
 
@@ -11,10 +12,10 @@ http.setConfig((config) => { /* config 为默认全局配置*/
 
 http.interceptors.request.use((config) => { // 可使用async await 做异步操作
   config.header['Authorization'] = `Basic ${Base64.encode(`${webconfig.clientId}:${webconfig.clientSecret}`)}`;
-  // if(getToken().token)
-  // {
-	 //  config.headers['Blade-Auth'] = 'bearer ' + getToken().token
-  // }
+  if(getToken().token)
+  {
+	  config.header['Blade-Auth'] = 'bearer ' + getToken().token
+  }
   return config
 }, error => { 
   return Promise.reject(error)

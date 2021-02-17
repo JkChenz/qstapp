@@ -17,6 +17,8 @@
 
 <script>
 	import {getCaptcha,loginByUsername} from '../../api/login.js'
+    import {setRefreshToken,setToken,getRefreshToken} from '@/utils/auth'
+    import {releaseWakeLock,wakeLock} from '@/utils/utils'
 	export default {
 		data() {
 			return {
@@ -31,18 +33,55 @@
 		methods: {
 			handleLogin() {
 				loginByUsername(this.username, this.password, this.key, this.code).then((res)=>{
-					console.log(res)
+					const data = res.data;
+					
+					if (data.error_description) {
+						uni.showToast({
+							icon: 'none',
+						    title: data.error_description,
+						    duration: 2000
+						});
+					} else {
+						uni.showToast({
+						    title: '登陆成功',
+						    duration: 2000
+						});
+						setToken(data.access_token)
+						setRefreshToken(data.refresh_token)
+					    uni.setStorageSync("userInfo",data);
+					    
+					    //限安卓app
+					    // #ifdef APP-PLUS
+					    //后台运行
+					    wakeLock()
+					    //定时刷新token任务
+					    setInterval(()=>{
+					        let tokenObj = getRefreshToken()
+					        console.log("定时任务")
+					        if(new Date().getTime() - tokenObj.date >= this.website.tokenTime)
+					        {
+					            console.log("Token刷新")
+					            refreshToken(tokenObj.token,data.tenant_id).then((res2)=>{
+					                setToken(res2.data.access_token)
+					                setRefreshToken(res2.data.refresh_token)
+					            })
+					        }
+					    },60000)
+					    // #endif
+					    
+						uni.reLaunch({url: '/pages/index/index'})
+					}
 				})
 			},
-			refreshCaptcha() {
-				getCaptcha().then((res)=>{
-					this.img = res.data.image
-					this.key = res.data.key
-				})
-			}
+			// refreshCaptcha() {
+			// 	getCaptcha().then((res)=>{
+			// 		this.img = res.data.image
+			// 		this.key = res.data.key
+			// 	})
+			// }
 		},
 		onLoad() {
-			this.refreshCaptcha()
+			// this.refreshCaptcha()
 		}
 	}
 </script>
