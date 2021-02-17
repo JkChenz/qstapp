@@ -16,6 +16,13 @@
 		        "backgroundColor":"#FFFFFF"
 			},
 		    "disableScroll":true
+		},
+		{
+			"path": "pages/aegis/aegis",
+			"style": {
+		        "backgroundColor":"#FFFFFF"
+			},
+		    "disableScroll":true
 		}
 	],
 	"globalStyle": {
