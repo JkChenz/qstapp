@@ -3,27 +3,15 @@
 		<u-grid :col="2">
 			<u-grid-item @click="handleQst">
 				<u-icon name="edit-pen-fill" :size="46"></u-icon>
-				<view class="grid-text">xx维护</view>
+				<view class="grid-text">检测单位维护</view>
 			</u-grid-item>
 			<u-grid-item @click="handleQst">
 				<u-icon name="edit-pen-fill" :size="46"></u-icon>
-				<view class="grid-text">xx维护</view>
+				<view class="grid-text">市场维护</view>
 			</u-grid-item>
 			<u-grid-item @click="handleQst">
 				<u-icon name="edit-pen-fill" :size="46"></u-icon>
-				<view class="grid-text">xx维护</view>
-			</u-grid-item>
-			<u-grid-item @click="handleQst">
-				<u-icon name="edit-pen-fill" :size="46"></u-icon>
-				<view class="grid-text">xx维护</view>
-			</u-grid-item>
-			<u-grid-item @click="handleQst">
-				<u-icon name="edit-pen-fill" :size="46"></u-icon>
-				<view class="grid-text">xx维护</view>
-			</u-grid-item>
-			<u-grid-item @click="navigateBack">
-				<u-icon name="edit-pen-fill" :size="46"></u-icon>
-				<view class="grid-text">返回</view>
+				<view class="grid-text">商品维护</view>
 			</u-grid-item>
 		</u-grid>
 	</view>

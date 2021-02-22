@@ -8,12 +8,12 @@ export const getCaptcha = () => {
 export const loginByUsername = (username, password, key, code) => {
 	return http.post("/blade-auth/oauth/token",null, {
 		header: {
-			'Tenant-Id': '000000',
+			'Tenant-Id': '212522',
 			'Captcha-Key': key,
 			'Captcha-Code': code,
 		},
 		params: {
-			tenantId: '000000',
+			tenantId: '212522',
 			username,
 			password: md5(password),
 			grant_type: "password",

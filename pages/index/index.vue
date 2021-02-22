@@ -3,7 +3,7 @@
         <u-grid :col="2">
             <u-grid-item @click="handleQst">
                 <u-icon name="edit-pen-fill" :size="46"></u-icon>
-                <view class="grid-text">快速检测</view>
+                <view class="grid-text">快检抽样</view>
             </u-grid-item>
             <u-grid-item @click="handleAegis">
                 <u-icon custom-prefix="custom-icon" name="weihu" :size="46"></u-icon>
@@ -33,7 +33,7 @@
             }
         },
         onLoad() {
-
+            
         },
         methods: {
             handleQst() {

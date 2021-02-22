@@ -3,6 +3,9 @@
 </template>
 
 <script>
+    import {
+        pageSamplingTask
+    } from '@/api/samplingTask'
     export default {
     		data() {
     			return {
@@ -13,12 +16,22 @@
     				}, {
     					name: '已完成任务',
     				}],
-                    currentTab:0
+                    currentTab:0,
+                    query:{}
     			}
     		},
             methods:{
                 tabsChange(index){
                     this.currentTab = index
+                    if(index == 0)
+                    {
+                        this.query={
+                            staffId: uni.getStorageSync("userInfo").user_id,
+                        }
+                    }
+                    pageSamplingTask(null,null,this.query).then((res)=>{
+                        console.log(res)
+                    })
                 },
             }
     	}
